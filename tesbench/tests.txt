@@ -1,0 +1,130 @@
+1,kk3415,ADDU,addu1.bin,Adding 5 + 3 into $2, 8,-/-
+2,kk3415,LUI,lui1.bin,Shifting immediate of 0x7FFF,0,-/-
+3,kk3415,LUI,lui2.bin,Shifting immediate of 0x8000, 0,-/-
+4,kk3415,SUB,sub1.bin,Subtract 1 from largest negative number (expect overflow),246,-/-
+5,kk3415,SUB,sub2.bin,Subtract largest negative number from 1 (expect overflow),246,-/-
+6,kk3415,SUBU,subu.bin,Subtract 1 from 0x80000000 to generate 0x7FFFFFFF,255,-/-
+7,kk3415,ADD,add1.bin,Adding 2 largest positive numbers (overflow expected),246,-/-
+8,kk3415,ADD,add2.bin,Adding 2 most negative numbers (overflow expected),246,-/-
+9,kk3415,ADD,add3.bin,Adding -1 to 5,4,-/-
+10,kk3415,JR,jr.bin,Jump to address 0 & nop,0,-/-
+11,kk3415,AND,and1.bin,0x24&0xFF,36,-/-
+12,kk3415,OR,or1.bin,0x24|0xDC = 0xFC,252,-/-
+13,kk3415,XOR,xor1.bin,0x24|0xDC = 0xF8,248,-/-
+14,kk3415,DIVU,divu1.bin,mfhi the result of 5/3,2,-/-
+15,kk3415,DIVU,divu2.bin,mflo the result of 5/3,1,-/-
+16,kk3415,DIVU,divu3.bin,mfhi the result of division by 0,0,-/-
+17,kk3415,DIVU,divu4.bin,mflo the result of division by 0,0,-/-
+18,kk3415,JR,jr2.bin,testing for jr exception,245,-/-
+19,kk3415,DIV,div1.bin,mfhi the result of division by 0,0,-/-
+20,kk3415,DIV,div2.bin,mhlo the result of division by 0,0,-/-
+21,kk3415,DIV,div3.bin,-3%2 mfhi,255,-/-
+22,kk3415,DIV,div4.bin,-3/2 mflo,254,-/-
+23,kk3415,DIV,div5.bin,5/-3 mflo,255,-/-
+24,kk3415,DIV,div6.bin,5%-3 mfhi,2,-/-
+25,kk3415,JALR,jalr1.bin,tests link register and places 10 in $2 if working,10,-/-
+26,kk3415,MULTU,multu1.bin, 0xFFFFFFFF ^2 mflo,1,-/-
+27,kk3415,MULTU,multu2.bin, 0xFFFFFFFF ^2 mfhi,254,-/-
+28,kk3415,MULT,mult1.bin, 0x7FFFFFFFF * (-1) mfhi,255,-/-
+29,kk3415,MULT,mult2.bin, 0x7FFFFFFFF * (-1) mflo,1,-/-
+30,kk3415,SLT,slt1.bin, if -1<1 set $2 to 1,1,-/-
+31,kk3415,SLTU,sltu1.bin, if 1<2 set $2 to 1,1,-/-
+32,kk3415,SRL,srl1.bin,96 shifted right by 1,48,-/-
+33,kk3415,SRLV,srlv1.bin,96 shifted right by 4,6,-/-
+34,kk3415,SRA,sra1.bin,-1 shifted right by 31 bits,255,-/-
+35,kk3415,SRAV,srav1.bin,-1 shifted right by value in register (=31),255,-/-
+36,kk3415,SLL,sll1.bin,16 right shifted by 1,32,-/-
+37,kk3415,SLLV,sllv1.bin,16 right shifted by 2, 64,-/-
+38,kk3415,MTLO,mtlo1.bin,Move 5 into LO and then back to r2,5,-/-
+39,kk3415,MTHI,mthi1.bin,Move 5 into HI then back to r2,5,-/-
+40,kk3415,LWL,lwl1.bin,LWL with offset of 0,171,-/-
+41,kk3415,LWL,lwl2.bin,LWL with offset of 1,2,-/-
+42,kk3415,LWL,lwl3.bin,LWL with offset of 2,2,-/-
+43,kk3415,LWL,lwl4.bin,LWL with offset of 3,2,-/-
+44,kk3415,LWL,lwl5.bin,Checking if LWL preserves bytes not written to,2,-/-
+45,kk3415,LWR,lwr1.bin,LWR with offset of 0,171,-/-
+46,kk3415,LWR,lwr2.bin,LWR with offset of 1,2,-/-
+47,kk3415,LWR,lwr3.bin,LWR with offset of 2,2,-/-
+48,kk3415,LWR,lwr4.bin,LWR with offset of 3,2,-/-
+49,kk3415,LWR,lwr5.bin,Checking if LWR preserves bytes not written to,2,-/-
+50,kk3415,LWL/R,lwllwr.bin,Checks functionality of LWL&LWR,2,-/-
+51,ac517,ADDI,addi1.bin,Add imm to register,255,-/-
+52,ac517,ADDI,addi2.bin,Signed overflow,246,-/-
+53,ac517,ADDIU,addiu.bin,No signed overflow,0,-/-
+54,ac517,ANDI,andi.bin,And 0xff with 0xf0,240,-/-
+55,ac517,BEQ,beq1.bin,No skip addition (not equal),2,-/-
+56,ac517,BEQ,beq2.bin,Skip addition (equal),1,-/-
+57,ac517,BNE,bne1.bin,Skip addition (not equal),1,-/-
+58,ac517,BNE,bne2.bin,No skip addition (equal),2,-/-
+59,ac517,LUI,lui3.bin,Lui then shift right 0x7fff,240,-/-
+60,ac517,ORI,ori1.bin,Or 0xf0 with 0x0f,255,-/-
+61,ac517,XORI,xori1.bin,Xori 0xf0 with oxff,15,-/-
+62,ac517,SLTI,slti1.bin,More than imm,0,-/-
+63,ac517,SLTI,slti2.bin,Less than imm,1,-/-
+64,ac517,SLTIU,sltiu1.bin,Less than 0xffffffff,1,-/-
+65,ac517,BGEZ,bgez1.bin,Skip addition(true),240,-/-
+66,ac517,BGEZ,bgez2.bin,No skip addition(false),255,-/-
+67,ac517,BGEZAL,bgezal1.bin,True and saved,31,-/-
+68,ac517,BGEZAL,bgezal2.bin,False and saved,32,-/-
+69,ac517,BGTZ,bgtz1.bin,Skip addition(true),240,-/-
+70,ac517,BGTZ,bgtz2.bin,No skip addition(false),255,-/-
+71,ac517,BLEZ,blez1.bin,Skip addtion(true),240,-/-
+72,ac517,BLEZ,blez2.bin,No skip addition(false),255,-/-
+73,ac517,BLTZ,bltz1.bin,Skip addition(true),240,-/-
+74,ac517,BLTZ,bltz2.bin,No skip addition(false),255,-/-
+75,ac517,BLTZAL,bltzal1.bin,Branch and saved,31,-/-
+76,ac517,BLTZAL,bltzal2.bin,No branch and saved,32,-/-
+77,ac517,LW,lw-a1.bin,Memory(range),245,-/-
+78,ac517,LW,lw-a2.bin,Memory(%4),245,-/-
+79,ac517,LW,slw1.bin,Store and load,1,-/-
+80,ac517,SW,sw-a1.bin,Memory(range),245,-/-
+81,ac517,SW,sw-a2.bin,Memory(%4),245,-/-
+82,ac517,LW,lwaddr.bin,Load from instructions,1,-/-
+83,ac517,LW,lwgetc1.bin,Not lsb of getc,1,X/-
+84,ac517,LW,lwgetc-eof.bin,Input eof in getc,1,EOF/-
+85,ac517,LW,lwgetc2.bin,Input A  getc,1,A/-
+86,ac517,LW,lwgetc-a1.bin,Memory,245,-/-
+87,ac517,SW,swputc1.bin,Output A,0,-/A
+88,ac517,SW,swputc-a1.bin,Memory(range),245,-/-
+89,ac517,SB,sb-a1.bin,Memory(range),245,-/-
+90,ac517,SB,sbputc1.bin,Output 0,65,-/0
+91,ac517,SB,sbputc2.bin,Output A,65,-/A
+92,ac517,SB,sb-complex.bin,Preserve other bytes,1,-/-
+93,ac517,SH,sh-a1.bin,Memory(range),245,-/-
+94,ac517,SH,sh-a2.bin,Memory(%2),245,-/-
+95,ac517,SH,shputc1.bin,Middle of putc,245,-/-
+96,ac517,SH,shputc2.bin,Ouput A,65,-/A
+97,ac517,SH,shputc3.bin,Output 0(not lsb),65,-/0
+98,ac517,SH,sh-complex.bin,Preserve rest of word,1,-/-
+99,ac517,LB,lb-a1.bin,Memory(range),245,-/-
+100,ac517,LB,lbgetc1.bin,Input A,1,A/-
+101,ac517,LB,lbgetc2.bin,Any input (not lsb),1,X/-
+102,ac517,LB,lbgetc-eof.bin,Input eof,1,EOF/-
+103,ac517,LB,lb-sign.bin,Sign extended load,255,-/-
+104,ac517,LH,lh-a1.bin,Memory(range),245,-/-
+105,ac517,LH,lh-a2.bin,Memory(%2),245,-/-
+106,ac517,LH,lhgetc1.bin,Input A,1,A/-
+107,ac517,LH,lhgetc2.bin,Any input(not lsb),1,X/-
+108,ac517,LH,lhgetc-eof.bin,Input eof,1,EOF/-
+109,ac517,LH,lh-sign.bin,Sign extended load,255,-/-
+110,ac517,LBU,lbu-a1.bin,Memory(range),245,-/-
+111,ac517,LBU,lbugetc1.bin,Input A,1,A/-
+112,ac517,LBU,lbugetc2.bin,Any input (not lsb),1,X/-
+113,ac517,LBU,lbugetc-eof.bin,Input eof,1,EOF/-
+114,ac517,LBU,lbu-sign.bin,Not sign extended load,15,-/-
+115,ac517,LHU,lhu-a1.bin,Memory(range),245,-/-
+116,ac517,LHU,lhu-a2.bin,Memory(%2),245,-/-
+117,ac517,LHU,lhugetc1.bin,Input A,1,A/-
+118,ac517,LHU,lhugetc2.bin,Any input(not lsb),1,X/-
+119,ac517,LHU,lhugetc-eof.bin,Input eof,1,EOF/-
+120,ac517,LHU,lhu-sign.bin,Not sign extended load,15,-/-
+121,ac517,JAL,jal1.bin,Branch and saved,31,-/-
+122,ac517,JAL,jal2.bin,Memory(invalid jump),245,-/-
+123,ac517,J,j1.bin,Branch(not saved),1,-/-
+124,ac517,J,j2.bin,Memory(invalid jump),245,-/-
+125,ac517,ADDI,write0.bin,$0 not ammendible,0,-/-
+126,ac517,ADDU,addu2.bin,No overflow,0,-/-
+127,ac517,SUB,sub3.bin,Overflow,246,-/-
+128,ac517,LWL,lwlgetc1.bin,Input eof,1,EOF/-
+129,ac517,LWR,lwrgetc1.bin,Input eof,1,EOF/-
+130,ac517,LWL,lwlgetc2.bin,Input A,1,A/-
